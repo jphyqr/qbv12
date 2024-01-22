@@ -193,7 +193,7 @@ return <section className=' py-48'>
 
 
    <BlockQuotes>
-    "Teach someone Incremental Static Regeneration, and they will think every website can become an authoritive DR 80."
+    Teach someone Incremental Static Regeneration, and they will think every website can become an authoritive DR 80.
    </BlockQuotes>
 
 <Separator className='mt-10 mb-10'/>
