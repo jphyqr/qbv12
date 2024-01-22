@@ -53,21 +53,21 @@ const tabs =  [
     {
         key: 'chapter_2',
         label: 'Chapter 2',
-        src:'/chapter-1.png',
+        src:'/poker.png',
         year: 2015,
         subText :'Poker',
         blocks: [
             {
                 type:'paragraph',
-                value: 'I was a poker player'
+                value: 'During my first full time job at iQMetrix I was playing live poker.  I made $300,000 at 23 and decided I should focus on poker instead of web development.'
             },
             {
                 type:'paragraph',
-                value: 'I was a poker player'
+                value: 'I spent the next 6 years travelling to high stakes tournaments and hosting poker games.  I won multiple tournaments and supported myself full time. '
             },
             {
                 type:'paragraph',
-                value: 'I was a poker player'
+                value: 'In 2018 I got 98th in the $10,000 WSOP main event. During Covid poker shut down and I decided to focus on web development again.'
             },
         ]
     },
@@ -162,6 +162,7 @@ const tabs =  [
         subText :'Freelance',
         src:'/chapter-1.png',
         youtubeId: 'WaMIEwKWbyI',
+        mediaSubText: 'Launching Lead Tech at Data Council in Austin',
         blocks: [
             {
                 type:'paragraph',
@@ -193,14 +194,18 @@ return <section id="section1" className=' py-48'>
 </TypeH2>
 
 
-   <BlockQuotes>
+   <BlockQuotes className=' mb-20'>
     Teach someone Incremental Static Regeneration, and they will think every website can become an authoritive DR 80.
    </BlockQuotes>
 
-<Separator className='mt-10 mb-10'/>
-<Lead>
-  My path to being a freelance web developer is not like most.  From professional football to poker to real estate to machine learning to product management to chuckwagon racing, I have had a lot of different experiences.  I have learned a lot of different things.  I have failed a lot.  I have succeeded a lot.  I have learned a lot.  I have grown a lot.  I have a lot of stories to tell.  I have a lot of lessons to share.  I have a lot of things to teach.  I have a lot of things to learn.  I have a lot of things to build.  I have a lot of things to do.  I have a lot of things to s
 
+<Lead>
+<p>
+    I took a unique path to becoming a Product Engineer.  I graduated as a software engineer while playing college football.  Then I spent my 20s do a bunch of neat competitive things.  Then in my 30s I got hired as a product manager.  Now I have settled in as a Product Engineer building web applications.
+</p>
+<TypeP>
+    test
+</TypeP>
 </Lead>
 
 <Separator className='mt-10 mb-10'/>
@@ -255,6 +260,9 @@ return <section id="section1" className=' py-48'>
                 </Lead>
                 </div>
                 <div className='grid grid-cols-2 gap-10 mt-10 '>
+                    <div className='flex flex-col'>
+
+                  
                     {tab.youtubeId?<iframe
           id="ytplayer"
        
@@ -276,7 +284,7 @@ return <section id="section1" className=' py-48'>
                         />
                         </AspectRatio>
 
-                        <div className="absolute z-10 w-full h-full    opacity-100 transition-opacity duration-300 ease-in-out   ">
+                     {selectedTab.key=='chapter_1' &&   <div className="absolute z-10 w-full h-full    opacity-100 transition-opacity duration-300 ease-in-out   ">
                         <AspectRatio ratio={9 / 9} className='relative w-full h-full'>
                         <Image
                             src='/chapter-1-color copy.png'
@@ -287,9 +295,11 @@ return <section id="section1" className=' py-48'>
                             priority
                         />
                         </AspectRatio>
-                        </div>
+                        </div>}
                     </div>
                     </div>}
+{tab.mediaSubText&& <Muted > {tab.mediaSubText}</Muted>}
+                    </div>
 
                     <div className='flex flex-col'>
 
