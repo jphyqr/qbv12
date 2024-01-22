@@ -30,7 +30,7 @@ return <div className='flex flex-col w-full mt-8 border  border-gray-800   round
                     onClick={()=>setActiveTab(tab)}
                     key={tab.key} className={`flex  flex-col  h-20 items-center justify-center mr-5  opacity-80 hover:opacity-100 transition-all hover:cursor-pointer ${tab.key==activeTab?.key?'opacity-100':''} `}>
     
-                    <div  className={`   p-2  border-gray-600 rounded-xl flex   items-center   ${tab.key==activeTab?.key?'   bg-violet-500':''} `}>
+                    <div  className={`   p-2  border-gray-600 rounded-xl flex   items-center   ${tab.key==activeTab?.key?'    bg-blue-800':''} `}>
                
                      {tab.icon}
                 

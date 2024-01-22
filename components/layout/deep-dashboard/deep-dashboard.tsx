@@ -32,7 +32,7 @@ return (
                     onClick={()=>setActiveTab(tab)}
                     key={tab.key} className={`flex flex-col items-center justify-center mr-5 opacity-80 hover:opacity-100 transition-all hover:cursor-pointer ${tab.key==activeTab?.key?'opacity-100':''} `}>
     
-                    <Card  className={` h-20 w-20 border-b mb-4 border-gray-600 rounded-xl flex items-center flex-col justify-center p-4    ${tab.key==activeTab?.key?'   text-violet-500':''} `}>
+                    <Card  className={` h-20 w-20 border-b mb-4 border-gray-600 rounded-xl flex items-center flex-col justify-center p-4    ${tab.key==activeTab?.key?'    text-blue-900':''} `}>
                      <AspectRatio ratio={1} className='m-0 p-0 flex flex-col items-center justify-center'>
                      {tab.icon}
                      </AspectRatio>

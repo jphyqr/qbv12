@@ -253,8 +253,8 @@ return <section className=' py-48'>
                     {tab.subText}
                 </Lead>
                 </div>
-                <div className='grid grid-cols-2 gap-10 mt-10'>
-                    <div className='flex flex-col'>
+                <div className='grid grid-cols-2 gap-10 mt-10 '>
+                    <div className='flex flex-col relative'>
                         <AspectRatio ratio={9 / 9} className='relative w-full h-full'>
                         <Image
                             src={tab.src}
@@ -265,6 +265,19 @@ return <section className=' py-48'>
                             priority
                         />
                         </AspectRatio>
+
+                        <div className="absolute z-10 w-full h-full    opacity-100 transition-opacity duration-300 ease-in-out   ">
+                        <AspectRatio ratio={9 / 9} className='relative w-full h-full'>
+                        <Image
+                            src='/chapter-1-color copy.png'
+                            alt="Vercel Logo"
+                          
+                            
+                            layout="fill"
+                            priority
+                        />
+                        </AspectRatio>
+                        </div>
                     </div>
 
                     <div className='flex flex-col'>
