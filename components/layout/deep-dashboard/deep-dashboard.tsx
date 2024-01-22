@@ -22,7 +22,7 @@ export default function DeepDashboard({topTabs}:DeepDashboardProps) {
 const [activeTab, setActiveTab] = useState<TopTabItems | null>(null)
 
 return (
-    <section className='flex flex-col w-full '>
+    <section id="section2" className='flex flex-col w-full '>
 
         <div className='flex w-full overflow-x-scroll'>
             {topTabs.map((tab)=> {

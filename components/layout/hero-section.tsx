@@ -94,7 +94,7 @@ export default function HeroSection({
         <div className='order-1 md:order-2 flex flex-col align-middle justify-center'>
         <AspectRatio   ratio={16/9} >
        {imageUrl&& <Image src={imageUrl} alt={h1} layout='fill' objectFit='cover' className='rounded-lg'/>}
-        {/* {videoUrl && <video src={videoUrl}   controls={true} loop muted className='rounded-lg w-full h-full'/>} */}
+        {videoUrl && <video src={videoUrl}   controls={true} loop muted className='rounded-lg w-full h-full'/>}
             </AspectRatio>
         </div>
         

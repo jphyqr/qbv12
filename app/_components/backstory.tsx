@@ -161,18 +161,19 @@ const tabs =  [
         year: 2020,
         subText :'Freelance',
         src:'/chapter-1.png',
+        youtubeId: 'WaMIEwKWbyI',
         blocks: [
             {
                 type:'paragraph',
-                value: 'I was a poker player'
+                value: 'When Covid cancelled the University football season, I was unbound to Regina.  I decided I would go on the road and see what else was out there.  I went to Los Angeles to start networking with Start ups'
             },
             {
                 type:'paragraph',
-                value: 'I was a poker player'
+                value: 'Eventually I landed a full time gig with Crowdpass where they needed someone to take over the web app.  I was able to take over the web app and build a mobile app and a lead generation system.'
             },
             {
                 type:'paragraph',
-                value: 'I was a poker player'
+                value: 'Here is me at Data Council in Austin where we rolled out our lead collection system to the public. '
             },
         ]
     },
@@ -184,8 +185,8 @@ export default function BackStory() {
 
 
 
-const [selectedTab, setSelectedTab] = useState(tabs[0])
-return <section className=' py-48'>
+const [selectedTab, setSelectedTab] = useState(tabs[6])
+return <section id="section1" className=' py-48'>
 
 <TypeH2>
   Back Story
@@ -205,7 +206,7 @@ return <section className=' py-48'>
 <Separator className='mt-10 mb-10'/>
 
 
-<Tabs defaultValue="account" className="w-full">
+<Tabs defaultValue="account" value={selectedTab.key} className="w-full">
     <div className='grid min-w-full w-full grid-cols-5  gap-10 mt-10'>
 
 <div className="col-span-5 md:col-span-4">
@@ -219,7 +220,7 @@ return <section className=' py-48'>
             return (
                 <TabsTrigger
                 onClick={()=>setSelectedTab(tab)}
-                key={tab.key} value={tab.key} className={`flex mb-2  border-b flex-col items-center justify-center mr-5 opacity-70 hover:opacity-100 transition-all hover:cursor-pointer ${tab.key==selectedTab?.key?'opacity-100':''} `}>
+                key={tab.key} value={tab.key} className={`flex mb-2  border-b flex-col items-center justify-center mr-5 hover:opacity-100 transition-all hover:cursor-pointer ${tab.key==selectedTab?.key?'opacity-100':'opacity-70 '} `}>
                 
                 <div className='flex flex-col'>
                     <div className='flex items-center mb-1'>
@@ -243,7 +244,7 @@ return <section className=' py-48'>
 {
     tabs.map((tab)=> {  
         return (
-            <TabsContent key={tab.key} value={tab.key}>
+            <TabsContent  key={tab.key} value={tab.key}>
             <div className=' flex flex-col'>
                 <div className = 'hidden md:flex md:flex-col '>
                 <TypeH2>
@@ -254,6 +255,15 @@ return <section className=' py-48'>
                 </Lead>
                 </div>
                 <div className='grid grid-cols-2 gap-10 mt-10 '>
+                    {tab.youtubeId?<iframe
+          id="ytplayer"
+       
+
+          width="100%"
+          height="360"
+          src={`https://www.youtube.com/embed/${tab.youtubeId}?autoplay=0&origin=http://example.com&controls=0&rel=1`}
+         
+        ></iframe>:<div>
                     <div className='flex flex-col relative'>
                         <AspectRatio ratio={9 / 9} className='relative w-full h-full'>
                         <Image
@@ -279,6 +289,7 @@ return <section className=' py-48'>
                         </AspectRatio>
                         </div>
                     </div>
+                    </div>}
 
                     <div className='flex flex-col'>
 
@@ -317,7 +328,7 @@ return <section className=' py-48'>
             return (
                 <TabsTrigger
                 onClick={()=>setSelectedTab(tab)}
-                key={tab.key} value={tab.key} className={`flex mb-2  border-b flex-col items-center justify-center mr-5 opacity-70 hover:opacity-100 transition-all hover:cursor-pointer ${tab.key==selectedTab?.key?'opacity-100':''} `}>
+                key={tab.key} value={tab.key} className={`flex mb-2  border-b flex-col items-center justify-center mr-5 hover:opacity-100 transition-all hover:cursor-pointer ${tab.key==selectedTab?.key?'opacity-100':'opacity-70 '} `}>
                 
                 <div className='flex flex-col'>
                     <div className='flex items-center mb-1'>
