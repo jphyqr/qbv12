@@ -1,8 +1,10 @@
 'use client'
+import { Lead } from "@/components/typography/lead"
 import { Muted } from "@/components/typography/muted"
 import { Small } from "@/components/typography/small"
 import { Card } from "@/components/ui/card"
 import { AspectRatio } from "@radix-ui/react-aspect-ratio"
+import { Separator } from "@radix-ui/react-dropdown-menu"
 import { useState } from "react"
 
 
@@ -10,6 +12,7 @@ type TopTabItems ={
     key: string
     label: string
     icon: React.ReactNode
+    description?: string
     component: React.ReactNode
 }
 
@@ -22,7 +25,7 @@ export default function DeepDashboard({topTabs}:DeepDashboardProps) {
 const [activeTab, setActiveTab] = useState<TopTabItems | null>(topTabs[1])
 
 return (
-    <section id="section2" className='flex flex-col w-full   h-[90vh] '>
+    <section id="section2" className='flex flex-col w-full   h-[1500px] '>
 
         <div className='flex w-full overflow-x-scroll '>
             {topTabs.map((tab)=> {
@@ -49,9 +52,11 @@ return (
            
                )}     
         </div>
-        
 
-        <div className='flex flex-col w-full  mt-14  rounded-xl p-4 items-center  flex-grow '>
+        <Separator className='w-full mb-20'/>
+
+        {activeTab?.description&& <Lead>{activeTab?.description}</Lead>}
+        <div className='flex flex-col w-full   rounded-xl p-4 items-center  flex-grow '>
             {activeTab&&activeTab.component}
         </div>
     </section>

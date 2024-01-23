@@ -70,7 +70,8 @@ export default function Home() {
     {
       key: 'React',
       icon: <Code/>,
-      label: 'React',
+      label: 'Components',
+      description: 'A collection of advanced React Components that I have built.',
       component: <ReactProjects/>
     },
     {
