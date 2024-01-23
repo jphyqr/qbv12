@@ -6,7 +6,7 @@ import { AspectRatio } from "@radix-ui/react-aspect-ratio";
 import { LinkedInLogoIcon } from "@radix-ui/react-icons";
 import { Code, Hammer, Linkedin, LinkedinIcon, LucideLinkedin, Spade } from "lucide-react";
 import Image from "next/image";
-import NextjsProjects from "./_components/nextjs-projects";
+import NextjsProjects from "./_components/react-projects";
 import { BlockQuotes } from "@/components/typography/blockquotes";
 import { Lead } from "@/components/typography/lead";
 import { TypeP } from "@/components/typography/p";
@@ -14,6 +14,7 @@ import { TypeH2 } from "@/components/typography/h2";
 import { Separator } from "@/components/ui/separator";
 import BackStory from "./_components/backstory";
 import CrowdpassProjects from "./_components/crowdpass-projects";
+import ReactProjects from "./_components/react-projects";
 
 export default function Home() {
 
@@ -62,7 +63,7 @@ export default function Home() {
       layout="fill"
       priority
     />,
-    component: <NextjsProjects/>
+    component: <div>Next Projects</div>
       ,
       label :'NextJS'
     },
@@ -70,7 +71,7 @@ export default function Home() {
       key: 'React',
       icon: <Code/>,
       label: 'React',
-      component: <NextjsProjects/>
+      component: <ReactProjects/>
     },
     {
       key: 'SEO',
