@@ -6,15 +6,38 @@ import { Muted } from "@/components/typography/muted";
 import { TypeP } from "@/components/typography/p";
 import { Small } from "@/components/typography/small";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { Card, CardContent } from "@/components/ui/card";
+import { Carousel, CarouselApi, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
 import { Tabs, TabsContent } from "@/components/ui/tabs";
 import { TabsList, TabsTrigger } from "@radix-ui/react-tabs";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
-const tabs =  [
+
+type Block = {
+    type: string
+    value: string
+    src?: string
+    youtubeId?: string
+
+}
+
+type Tabs ={
+    key: string
+    label: string
+    year: number
+    subText: string
+    src?: string
+    mediaSubText?: string
+    blocks: Block[]
+    youtubeId?: string
+
+}
+
+const tabs : Tabs[] =  [
 
 
     {
@@ -26,7 +49,8 @@ const tabs =  [
         blocks: [
             {
                 type:'paragraph',
-                value: 'Attended the university of Regina on a football scholarship.  Started 32 games at Right Tackle.  Team nominee for top student athlete.  Graduated with a degree in Software Systems Engineering.'
+                value: 'Attended the university of Regina on a football scholarship.  Started 32 games at Right Tackle.  Team nominee for top student athlete.  Graduated with a degree in Software Systems Engineering.',
+                src: '/rams.png'
             },
             {
                 type:'paragraph',
@@ -34,7 +58,8 @@ const tabs =  [
             },
             {
                 type:'paragraph',
-                value: 'In 2013 I earned a spot on the Montreal Alouettes. The following season I was released and got a job at iQMetrix as a full stack web developer.'
+                value: 'In 2013 I earned a spot on the Montreal Alouettes. The following season I was released and got a job at iQMetrix as a full stack web developer.',
+                src: '/als.png'
             },
             {
                 type:'paragraph',
@@ -184,41 +209,55 @@ const tabs =  [
 export default function BackStory() {
 
 
+    const [api, setApi] = useState<CarouselApi>()
+    const [current, setCurrent] = useState(0)
+    const [count, setCount] = useState(0)
+    const [selectedTab, setSelectedTab] = useState(tabs[6])
+
+    useEffect(() => {
+        if (!api) {
+          return
+        }
+     
+
+        setCount(api.scrollSnapList().length)
+        setCurrent(api.selectedScrollSnap() + 1)
+     
+        api.on("select", () => {
+
+          setCurrent(api.selectedScrollSnap() + 1)
+        })
+      }, [api])
 
 
-const [selectedTab, setSelectedTab] = useState(tabs[6])
+
+
+
+
+const [selectedBlockIndex, setSelectedBlockIndex] = useState(0)
 return <section id="section1" className=' py-48'>
 
 <TypeH2>
   Back Story
 </TypeH2>
 
-
+{/* 
    <BlockQuotes className=' mb-20'>
     Teach someone Incremental Static Regeneration, and they will think every website can become an authoritive DR 80.
-   </BlockQuotes>
+   </BlockQuotes> */}
 
 
-<Lead>
-<p>
-    I took a unique path to becoming a Product Engineer.  I graduated as a software engineer while playing college football.  Then I spent my 20s do a bunch of neat competitive things.  Then in my 30s I got hired as a product manager.  Now I have settled in as a Product Engineer building web applications.
-</p>
-<TypeP>
-    test
-</TypeP>
-</Lead>
 
-<Separator className='mt-10 mb-10'/>
 
 
 <Tabs defaultValue="account" value={selectedTab.key} className="w-full">
     <div className='grid min-w-full w-full grid-cols-5  gap-10 mt-10'>
 
-<div className="col-span-5 md:col-span-4">
+<div className="col-span-5 md:col-span-4 ">
 
 
 
-    <div className='md:hidden flex'>
+    <div className='md:hidden flex '>
     <TabsList className='flex overflow-x-scroll'>
     {
         tabs.map((tab)=> {
@@ -250,7 +289,7 @@ return <section id="section1" className=' py-48'>
     tabs.map((tab)=> {  
         return (
             <TabsContent  key={tab.key} value={tab.key}>
-            <div className=' flex flex-col'>
+            <div className=' flex flex-col '>
                 <div className = 'hidden md:flex md:flex-col '>
                 <TypeH2>
                     {tab.label}
@@ -259,32 +298,43 @@ return <section id="section1" className=' py-48'>
                     {tab.subText}
                 </Lead>
                 </div>
-                <div className='grid grid-cols-2 gap-10 mt-10 '>
-                    <div className='flex flex-col'>
+                <div className='flex md:grid mt-10  '>
+                   
+
+
+<Carousel     setApi={setApi} className="w-full  max-w-md ml-auto mr-auto">
+      <CarouselContent >
+        {tab.blocks.map((block, index) => (
+            <CarouselItem key={index}>
+            <div className="p-1">
+              <Card>
+           
+
+ <div className='flex flex-col'>
 
                   
-                    {tab.youtubeId?<iframe
+                    {block.youtubeId?<iframe
           id="ytplayer"
        
 
           width="100%"
           height="360"
-          src={`https://www.youtube.com/embed/${tab.youtubeId}?autoplay=0&origin=http://example.com&controls=0&rel=1`}
+          src={`https://www.youtube.com/embed/${block.youtubeId}?autoplay=0&origin=http://example.com&controls=0&rel=1`}
          
         ></iframe>:<div>
                     <div className='flex flex-col relative'>
                         <AspectRatio ratio={9 / 9} className='relative w-full h-full'>
                         <Image
-                            src={tab.src}
+                            src={block.src || '/chapter-1-color copy.png'}
                             alt="Vercel Logo"
-                            className="grayscale"
+                          
                             
                             layout="fill"
                             priority
                         />
                         </AspectRatio>
 
-                     {selectedTab.key=='chapter_1' &&   <div className="absolute z-10 w-full h-full    opacity-100 transition-opacity duration-300 ease-in-out   ">
+                     {/* {selectedTab.key=='chapter_1' &&   <div className="absolute z-10 w-full h-full    opacity-100 transition-opacity duration-300 ease-in-out   ">
                         <AspectRatio ratio={9 / 9} className='relative w-full h-full'>
                         <Image
                             src='/chapter-1-color copy.png'
@@ -295,33 +345,44 @@ return <section id="section1" className=' py-48'>
                             priority
                         />
                         </AspectRatio>
-                        </div>}
+                        </div>} */}
                     </div>
                     </div>}
 {tab.mediaSubText&& <Muted > {tab.mediaSubText}</Muted>}
+<p>
+    {block.value}
+</p>
                     </div>
 
-                    <div className='flex flex-col'>
+              </Card>
+            </div>
+            </CarouselItem>
+        ))}
+        {/* {Array.from({ length: 5 }).map((_, index) => (
+          <CarouselItem key={index}>
+            <div className="p-1">
+              <Card>
+                <CardContent className="flex aspect-square items-center justify-center p-6">
+                  <span className="text-4xl font-semibold">{index + 1}</span>
+                </CardContent>
+              </Card>
+            </div>
+          </CarouselItem>
+        ))} */}
+      </CarouselContent>
+      <CarouselPrevious
+       //onClick={()=>setSelectedBlockIndex(selectedBlockIndex-1)}
+      />
+      <CarouselNext
+
+       //onClick={()=>setSelectedBlockIndex(selectedBlockIndex+1)}
+       />
+      
+  
+    </Carousel>
 
 
-                        <ScrollArea className=" h-[400px] w-full ">
-
-                        {tab.blocks.map((block, i)=> {
-                            return (
-                                <div key={i} className='flex flex-col mb-4'>
-                                    <div className='flex flex-col'>
-                                        {block.type=='paragraph'&&
-                                        <TypeP >
-                                            {block.value}
-                                        </TypeP>
-                                        }
-                                    </div>
-                                </div>
-                            )
-                        })}
-                        </ScrollArea>
-                
-                    </div>
+                  
 
                 </div>
             </div>
