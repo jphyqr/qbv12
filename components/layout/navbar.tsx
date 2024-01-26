@@ -19,6 +19,8 @@ import {
  
 import useScroll from "@/lib/hooks/use-scroll";
 import { ModeToggle } from "../dark-toggle";
+import { Button } from "../ui/button";
+import { scrolltoHash } from "@/app/page";
 
 
 const components: { title: string; href: string; description: string }[] = [
@@ -132,11 +134,16 @@ export default function NavBar() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem >
-          <Link href="/contact-john-hashem" legacyBehavior passHref>
+          <Link  href="/contact-john-hashem" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               Contact Me
             </NavigationMenuLink>
           </Link>
+        </NavigationMenuItem>
+        <NavigationMenuItem >
+        <NavigationMenuItem >
+        <Button className={navigationMenuTriggerStyle()} onClick={()=>scrolltoHash('faqs')} variant="link">Faqs</Button>
+        </NavigationMenuItem>
         </NavigationMenuItem>
       </NavigationMenuList>
 

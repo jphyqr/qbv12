@@ -235,7 +235,7 @@ export default function BackStory() {
 
 
 const [selectedBlockIndex, setSelectedBlockIndex] = useState(0)
-return <section id="section1">
+return <section id="section1" className=' w-full p-4'>
 
 <TypeH2>
   Back Story

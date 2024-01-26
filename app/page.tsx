@@ -15,13 +15,16 @@ import { Separator } from "@/components/ui/separator";
 import BackStory from "./_components/backstory";
 import CrowdpassProjects from "./_components/crowdpass-projects";
 import ReactProjects from "./_components/react-projects";
+import Faqs from "@/components/layout/faqs";
+
+
+export const scrolltoHash = function (element_id: string) {
+  const element = document.getElementById(element_id)
+  element?.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+}
 
 export default function Home() {
 
-  const scrolltoHash = function (element_id: string) {
-    const element = document.getElementById(element_id)
-    element?.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
-  }
 
 
   const icons = [ 
@@ -58,9 +61,10 @@ export default function Home() {
    />
 
 
+
+
 <div id='backstory' className='mb-14'/>
 <BackStory/>
-
 
 
 
@@ -146,6 +150,54 @@ export default function Home() {
    ]}
    />
 
+
+<div id='faqs' className='mb-14'/>
+<Faqs faqs={
+
+[
+  {
+      question:'Do You Code?',
+      answer: 'Yes, I code 5-6 days a week. Coding is my creative outlet.'
+  },
+  {
+    question: 'How much do you charge?',
+    answer: 'Depends if your project is going to take over my creative brain. If it is closed loop programming then $75/hour.  If it is open ended strategic work that will tap into my subconcious mind then I charge 5K-15K/month depending on services.'
+  },
+  {
+    question:'Can you fix my computer?',
+    answer: 'No. I am pretty terrible with hardware/networks/anything that is not code.'
+},
+{
+  question:'Can you remodel my bathroom?',
+  answer: 'Yes.  I can fix nearly anything in wood frame construction.'
+},
+{
+  question:'Do you count cards?',
+  answer: 'No.  That is blackjack.  I am very bad at blackjack.  If you are going to gamble your best bet is bacarrat or craps since you cannot make a mistake.  Roulette you may get short changed.  Blackjack and poker you will be way behind the curve.'
+},
+  {
+    question:'How much do you bench press?',
+    answer: 'When I was 23 I did 425.  In 2022 I had a slight tear in my pec, now I am working my way back up.  Currently 315 for 5'
+},
+{
+  question:'What is the most you ever lost at poker?',
+  answer: 'Lots of 10K tournament buy ins.  In a cash game the most I lost was 30K in Malibus Room Montreal.  I transfered my 500 BNB to reaload.  6 months later those coins were worth $1,000,000'
+},
+  {
+    question: 'How Tall are you?',
+    answer: '6\'7'
+  },
+  {
+    question: 'What does it cost to feed you?',
+    answer: 'A lot.  I spend most of my income on food.  I generally only eat beef and I have a nack for Rib steaks.  This addiction will keep me poor and dependant on your business.'
+  },
+  {
+    question: 'What is your favorite product?',
+    answer: 'John Hashem as a business has too many competing alter egos to use metric based prioritization frameworks.   Looking across all alter egos, there is one common motivation: fitness.  So we will use Jobs-to-be-done.  The main Job To Be Done for John is to become the strongest, fittest version of himself without increasing time in the gym/kitchen.   From this perspective the best product for John right now is Taco beef.  The product hits all of Johns macro goals while being cost effective, flexible, low time commitment and delicious.'
+  }
+]
+
+}/>
 
 
 
