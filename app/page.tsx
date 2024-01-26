@@ -53,7 +53,7 @@ export default function Home() {
     primaryButton={<Button onClick={()=>scrolltoHash('projects')} variant="default">Projects</Button>}
     secondaryButton={<Button onClick={()=>scrolltoHash('backstory')} variant="outline">Back Story</Button>}
     videoUrl='https://aqsqa2ypgvbzi7ri.public.blob.vercel-storage.com/AECSEOINTRO-IeZSZduqQ2uoxOkryjvjCRwmwNV8T7.mp4'//https://aqsqa2ypgvbzi7ri.public.blob.vercel-storage.com/vsl_4-9UiWNO4erDe3m5fau5X1YlwMxD7FHL.mp4'
-
+    thumbnailUrl='/thumbnail.png'
 
    />
 
