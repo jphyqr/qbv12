@@ -235,7 +235,7 @@ export default function BackStory() {
 
 
 const [selectedBlockIndex, setSelectedBlockIndex] = useState(0)
-return <section id="section1" className=' py-48'>
+return <section id="section1">
 
 <TypeH2>
   Back Story
@@ -301,12 +301,14 @@ return <section id="section1" className=' py-48'>
                 <div className='flex md:grid mt-10  '>
                    
 
+<div id='carousel-wrapper' className='px-14 md:px-0  '>
 
-<Carousel     setApi={setApi} className="w-full  max-w-md ml-auto mr-auto">
+
+<Carousel     setApi={setApi} className="  max-w-md ml-auto   mr-auto">
       <CarouselContent >
         {tab.blocks.map((block, index) => (
             <CarouselItem key={index}>
-            <div className="p-1">
+            <div>
               <Card>
            
 
@@ -348,10 +350,14 @@ return <section id="section1" className=' py-48'>
                         </div>} */}
                     </div>
                     </div>}
-{tab.mediaSubText&& <Muted > {tab.mediaSubText}</Muted>}
-<p>
+
+                    <div className='p-3'>
+                    {/* {tab.mediaSubText&& <Muted > {tab.mediaSubText}</Muted>} */}
+<p className='mt-2'>
     {block.value}
 </p>
+                    </div>
+
                     </div>
 
               </Card>
@@ -375,13 +381,14 @@ return <section id="section1" className=' py-48'>
       />
       <CarouselNext
 
+
        //onClick={()=>setSelectedBlockIndex(selectedBlockIndex+1)}
        />
       
   
     </Carousel>
 
-
+    </div>
                   
 
                 </div>

@@ -8,12 +8,20 @@ import { ArrowTopRightIcon } from "@radix-ui/react-icons"
 import { Badge } from "../ui/badge"
 
 
-
+type IconButtonProps = {
+    icon: React.ReactNode
+    label?: string
+    href: string
+}
 
 export default function HeroSection({
+  icons,
     linkLabel,
     linkHref,
     leadingIcon,
+    secondaryIcon,
+    secondaryLabel,
+    secondaryHref,
     h1,
     p1,
     p2,
@@ -24,9 +32,14 @@ export default function HeroSection({
 } : 
 
 {
+
+    icons: IconButtonProps[],
     linkLabel?: string,
     linkHref?: string,
     leadingIcon?: React.ReactNode,   
+    secondaryIcon?: React.ReactNode,
+    secondaryLabel?: string,
+    secondaryHref?: string,
     h1: string,
     p1: string,
     p2: string,
@@ -47,27 +60,44 @@ export default function HeroSection({
 
         <div className='flex flex-col p-10 md:p-0  items-center md:items-start justify-center  md:h-[600px] order-2 md:order-1    '>
        
-       {linkHref&&
-          <Link className='mb-8 text-sm text-muted-foreground flex  items-center  first:mr-2'  href={linkHref}>
+
+       <div className='flex'>
+        {
+        icons?.map((icon)=> {
+            return (
+                <Link key={icon.href} target="_blank" className='mb-8 text-sm text-muted-foreground flex  items-center  first:mr-2'  href={icon.href}>
             
-          <Badge className='p-2' variant={'outline'}>
-            <>
-           
-          <span>
-           {leadingIcon}
-            </span> 
-             <span className='mr-2'>
-            {linkLabel}
-                </span>  
+                <Badge className='p-2' variant={'outline'}>
+                  <>
+                 
                 <span>
-                <ArrowTopRightIcon className='inline-block'/> 
-                </span>  
-                </>  
-                </Badge>
-            
+                 {icon.icon}
+                  </span> 
+                   <span className='mr-2'>
+                  {icon.label}
+                      </span>  
+                      <span>
+                      <ArrowTopRightIcon className='inline-block'/> 
+                      </span>  
+                      </>  
+                      </Badge>
+                  
+  
+                   </Link>
+            )
 
-             </Link>}
 
+
+        }
+          
+          )}
+ 
+  
+       </div>
+
+             
+
+             
           <TypeH1>
             {h1}
           </TypeH1>

@@ -84,7 +84,7 @@ export default function NavBar() {
           </Link>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
+          <NavigationMenuTrigger>Services</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               <li className="row-span-3">
@@ -95,24 +95,22 @@ export default function NavBar() {
                   >
                     {/* <Icons.logo className="h-6 w-6" /> */}
                     <div className="mb-2 mt-4 text-lg font-medium">
-                      shadcn/ui
+                      QBV1
                     </div>
                     <p className="text-sm leading-tight text-muted-foreground">
-                      Beautifully designed components that you can copy and
-                      paste into your apps. Accessible. Customizable. Open
-                      Source.
+                      Product Engineering.  0 to 1 Design and Development
                     </p>
                   </a>
                 </NavigationMenuLink>
               </li>
-              <ListItem href="/docs" title="Introduction">
-                Re-usable components built using Radix UI and Tailwind CSS.
+              <ListItem href="/new-venture-warmup" title="New Venture Warmup">
+                Technical SEO Planning and Setup for salvagable domains
               </ListItem>
-              <ListItem href="/docs/installation" title="Installation">
-                How to install dependencies and structure your app.
+              <ListItem href="/next-js-developer" title="Web Development">
+                Custom NextJS Builds
               </ListItem>
-              <ListItem href="/docs/primitives/typography" title="Typography">
-                Styles for headings, paragraphs, lists...etc
+              <ListItem href="/niche-tools-for-seo" title="Niche Tools">
+                Custom niche components designed for linkability, user signal and SEO
               </ListItem>
             </ul>
           </NavigationMenuContent>
@@ -134,9 +132,9 @@ export default function NavBar() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem >
-          <Link href="/docs" legacyBehavior passHref>
+          <Link href="/contact-john-hashem" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Documentation
+              Contact Me
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>

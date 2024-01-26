@@ -41,8 +41,8 @@ items={[
     key:'jamstacks',
     label:'CSS animation',
     icon: <Spade/>,
-    description: 'CSS Animation for a Twitch Stream where I talked about JAMSTACK applications',
-    href: 'https://www.smrtdegen.com/poker/training/wsop-main-event-day-1-prep/6',
+    description: 'While I generally use UI Kits and Framer Motion for animations, I can build custom ones from scratch.  This is a CSS animation for a Twitch stream',
+   
     component: 
     
     <div className='flex flex-col'>
