@@ -2,26 +2,16 @@
 import DeepDashboard from "@/components/layout/deep-dashboard/deep-dashboard";
 import HeroSection from "@/components/layout/hero-section";
 import { Button } from "@/components/ui/button";
-import { AspectRatio } from "@radix-ui/react-aspect-ratio";
 import { GitHubLogoIcon, LinkedInLogoIcon, TwitterLogoIcon } from "@radix-ui/react-icons";
 import { Code, Github, Hammer, Linkedin, LinkedinIcon, LucideLinkedin, Spade } from "lucide-react";
 import Image from "next/image";
-import NextjsProjects from "./_components/react-projects";
-import { BlockQuotes } from "@/components/typography/blockquotes";
-import { Lead } from "@/components/typography/lead";
-import { TypeP } from "@/components/typography/p";
-import { TypeH2 } from "@/components/typography/h2";
-import { Separator } from "@/components/ui/separator";
 import BackStory from "./_components/backstory";
 import CrowdpassProjects from "./_components/crowdpass-projects";
 import ReactProjects from "./_components/react-projects";
 import Faqs from "@/components/layout/faqs";
+import { scrolltoHash } from "@/lib/utils";
 
 
-export const scrolltoHash = function (element_id: string) {
-  const element = document.getElementById(element_id)
-  element?.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
-}
 
 export default function Home() {
 

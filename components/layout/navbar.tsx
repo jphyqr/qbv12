@@ -5,7 +5,7 @@ import Link from "next/link";
 
 import * as React from "react"
  
-import { cn } from "@/lib/utils"
+import { cn, scrolltoHash } from "@/lib/utils"
 
 import {
   NavigationMenu,
@@ -20,7 +20,6 @@ import {
 import useScroll from "@/lib/hooks/use-scroll";
 import { ModeToggle } from "../dark-toggle";
 import { Button } from "../ui/button";
-import { scrolltoHash } from "@/app/page";
 
 
 const components: { title: string; href: string; description: string }[] = [
