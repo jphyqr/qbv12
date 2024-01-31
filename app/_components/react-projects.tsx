@@ -25,7 +25,7 @@ items={[
     description: 'A calculator to help you determine the cost of your cold plunge',
     href: 'https://coldplungemap.com/plunge-cost-calculator',
     component:<div className="flex w-full  flex-grow">
-<iframe src="https://coldplungemap.com/plunge-cost-calculator" className=' flex-grow' frameBorder="0" allowFullScreen></iframe>
+<iframe src="https://coldplungemap.com/component" className=' flex-grow' frameBorder="0" allowFullScreen></iframe>
     </div> },
 {
     key:'smart-degen',

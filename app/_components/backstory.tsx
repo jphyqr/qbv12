@@ -22,6 +22,8 @@ type Block = {
     value: string
     src?: string
     youtubeId?: string
+    grayscale?: boolean
+    videoSrc?: string
 
 }
 
@@ -34,11 +36,11 @@ type Tabs ={
     mediaSubText?: string
     blocks: Block[]
     youtubeId?: string
+   
 
 }
 
 const tabs : Tabs[] =  [
-
 
     {
       key: 'chapter_1',
@@ -49,30 +51,23 @@ const tabs : Tabs[] =  [
         blocks: [
             {
                 type:'paragraph',
-                value: 'Attended the university of Regina on a football scholarship.  Started 32 games at Right Tackle.  Team nominee for top student athlete.  Graduated with a degree in Software Systems Engineering.',
-                src: '/rams.png'
+                value: 'Attended the University of Regina on a football scholarship.  Started 32 games at Right Tackle.  Team nominee for top student athlete.  Graduated with a degree in Software Systems Engineering.',
+                src: '/rams.png',
+       
             },
-            {
-                type:'paragraph',
-                value: 'Was drafted by the Calgary Stampeders in the 3rd round.  Attended camps with the Stampeders, Winnipeg Bluebombers and The Montreal Alouettes.  '
-            },
+
             {
                 type:'paragraph',
                 value: 'In 2013 I earned a spot on the Montreal Alouettes. The following season I was released and got a job at iQMetrix as a full stack web developer.',
                 src: '/als.png'
             },
+
             {
                 type:'paragraph',
-                value: 'Attended the university of Regina on a football scholarship.  Started 32 games at Right Tackle.  Team nominee for top student athlete.  Graduated with a degree in Software Systems Engineering.'
+                value: 'Coaching.',
+                videoSrc: 'https://aqsqa2ypgvbzi7ri.public.blob.vercel-storage.com/fakefg-aQRaBGghIHoQpYav3ZLcbvDJLPWAfh.mp4'
             },
-            {
-                type:'paragraph',
-                value: 'Was drafted by the Calgary Stampeders in the 3rd round.  Attended camps with the Stampeders, Winnipeg Bluebombers and The Montreal Alouettes.  '
-            },
-            {
-                type:'paragraph',
-                value: 'In 2013 I earned a spot on the Montreal Alouettes. The following season I was released and got a job at iQMetrix as a full stack web developer.'
-            },
+
         ]
     },
     {
@@ -84,16 +79,18 @@ const tabs : Tabs[] =  [
         blocks: [
             {
                 type:'paragraph',
-                value: 'During my first full time job at iQMetrix I was playing live poker.  I made $300,000 at 23 and decided I should focus on poker instead of web development.'
+                src: '/poker-1.png',
+                grayscale:true,
+                value: 'Was playing poker full time and working at iQMetrix.  I was making more money playing poker than I was at my job.  I decided to quit my job and play poker full time.'
             },
             {
                 type:'paragraph',
-                value: 'I spent the next 6 years travelling to high stakes tournaments and hosting poker games.  I won multiple tournaments and supported myself full time. '
+                value: 'I spent the next 6 years travelling to high stakes tournaments and hosting poker games.  I won multiple tournaments and supported myself full time.  My best finish was 98th/8600 in the World Series Of Poker Main Event',
+                grayscale:true,
+
+                src:'/poker-2.png'
             },
-            {
-                type:'paragraph',
-                value: 'In 2018 I got 98th in the $10,000 WSOP main event. During Covid poker shut down and I decided to focus on web development again.'
-            },
+
         ]
     },
     {
@@ -105,104 +102,138 @@ const tabs : Tabs[] =  [
         blocks: [
             {
                 type:'paragraph',
-                value: 'I was a poker player'
+                src: '/real-estate-1.png',
+                value: 'I needed a break from poker and decided to get into real estate.  I saw a rehab property on my street and decided I would buy it and fix it.  Neighbours said it was vacant for a decade.  Went through the mail to find names. Found the owners Obituary online.  Spent a month contacting everyone with the same last name on facebook/phone book until I found all 4 siblings and purchased the property.  I had not even been inside.  30K for a house on a lot worth 80K.  Then walked into this.'
             },
             {
                 type:'paragraph',
-                value: 'I was a poker player'
+                src: '/real-estate-2.png',
+                value: 'I was shocked.  But I knew there was nothing in this place that I couldnt handle.  A thousand simple tasks that needed to be done. I found labourers on facebook to help and got to work.'
             },
             {
                 type:'paragraph',
-                value: 'I was a poker player'
+                value: 'Ripped out everything.  Fixed fire damaged exterior walls. Added a beam to open up interior wall.  Learned the residential electrical code and passed a home owners inspection. ',
+                videoSrc:'https://aqsqa2ypgvbzi7ri.public.blob.vercel-storage.com/poker03-qZzG6WZPfBaWjKNoXh1lkt1Wy8756k.mp4'
+
             },
+            {
+                type:'paragraph',
+                value: 'Converted to a fully legal up and down suite and sold it for 240K.  ',
+                videoSrc: 'https://aqsqa2ypgvbzi7ri.public.blob.vercel-storage.com/real-estate-4-Mrbin3H3CT6yhX592Sf4NdWQySYBoq.mp4'
+            },
+            {
+                type:'paragraph',
+                value: 'At the same time, my parents home had a fire.  They needed a full rebuild and seemed obvious for me to take the tools and crew I was working with and take on a much bigger project.  Without blinking I was build a residential construction company. ',
+                src: '/real-estate-6.png'
+            },
+            {
+                type:'paragraph',
+                value: 'After my parents house, I ended up doing contracting jobs for friends and family.  It was exciting and fun, but never what I planned on doing with my life.  I had to get back into software.',
+                src: '/real-estate-8.png'
+            },
+            {
+                type:'paragraph',
+                value: 'I loved building with my hands, but I wanted to build something with more impact.  I knew it would be tough to get back into tech after a long break, but I knew it would be nothing compared to the things I built over the last 4 years in construction.',
+videoSrc:'https://aqsqa2ypgvbzi7ri.public.blob.vercel-storage.com/channels-jyKcDqWecOAcLWQrz2k3QSshibeaDs.mp4'            }
         ]
     },
     {
         key: 'chapter_4',
         label: 'Chapter 4',
-        src:'/chapter-1.png',
+        src:'/product-1.png',
         year: 2017,
-        subText :'Udemy',
+        subText :'Product',
         blocks: [
+
             {
                 type:'paragraph',
-                value: 'I was a poker player'
+                src:'/product-3.png',
+                value: 'Did a hard stop on construction.  Focused on poker and figuring out a way back into tech. I had a clear vision of my future and changed to become the person I saw myself as.  Spent months on Udemy and at the gym to prepare for the next chapter.  Attended networking events to get a feel for the local tech industry.'
             },
             {
                 type:'paragraph',
-                value: 'I was a poker player'
+                src:'/product-2.png',
+                value: 'A player in my game had just done an ICO. I told him that if there was a big enough change in tech that the industry would forgive my 6 year break, I would do it.  "This is it." he said, and I started learning about blockchain and machine learning.  I started attending tech events and networking.  I realized there was nothing in my city for data science and hosted an event.  This lead to my first job.'
             },
             {
                 type:'paragraph',
-                value: 'I was a poker player'
+                src:'/product-4.png',
+                 value: 'I was hired to be the product manager for their AI ad tech product.  It was a great experience to work at a start up and work as both a product manager and a software developer.'
             },
+
         ]
     },
     {
         key: 'chapter_5',
         label: 'Chapter 5',
-        year: 2018,
-        subText :'PdM',
-        src:'/chapter-1.png',
-        blocks: [
-            {
-                type:'paragraph',
-                value: 'I was a poker player'
-            },
-            {
-                type:'paragraph',
-                value: 'I was a poker player'
-            },
-            {
-                type:'paragraph',
-                value: 'I was a poker player'
-            },
-        ]
-    },
-    {
-        key: 'chapter_6',
-        label: 'Chapter 6',
         year: 2019,
         subText :'Chuckwagon',
         src:'/chapter-1.png',
         blocks: [
             {
                 type:'paragraph',
-                value: 'I was a poker player'
+                value: 'While working as a PdM, I was coding side projects for my hobbies.  I was the host in the local poker community and decided to build an app for poker hosts.  Poker was going to be my way to see the world, and the app would get me access to the games I wanted to be in.  I started privatehost, social network for hosts and players',
+                 src: '/privatehost.png'
             },
             {
                 type:'paragraph',
-                value: 'I was a poker player'
+                videoSrc: 'https://aqsqa2ypgvbzi7ri.public.blob.vercel-storage.com/filtered-CCEFD9A2-99F0-407B-8498-E6ACA61A9975-tBJNPBgIhznk8BR8cd4ZhnP0XwNKoq.MP4',
+
+                value: 'I needed a proper studio to run the game while also building the app.  A place I had full control.   I rented a shut down restaurant with a loft up top.  As pandemic restrictions increased we could only have 6 people in a room. I cut a hole in my poker table and built a way to stream players into the game.  Eventually restrictions got too tight and I had to shut it down.  I was stuck with a building and no way to use it.  I subletted the kitchen to my poker dealer who had a small hummus company.  He had just got the kitchen back up to code.  I had nothing to do for the next month and I joked about turning it into a Texas BBQ restaurant, and he said absolutely.'
+            },
+
+            {
+                type:'paragraph',
+                src: '/smoker.jpg',
+                value: 'We designed and fabricated a smoker and started renovating. Word god to our neighbours and they were not too happy about the idea of a Smoker, and told us they would fight it.  I knew I could come up with a new food offering and started experiementing with neat things off Youtube.'
+            },
+            
+            {
+                videoSrc: 'https://aqsqa2ypgvbzi7ri.public.blob.vercel-storage.com/chuckwagon-szjLxpsd3kBJY5rrpGBvojPZ63NeaX.mp4',
+                type:'paragraph',
+                value: 'In a month, I we turned the poker club into a restaurant. But we had no food offering. Smashburgers looked neat and we had a great gas stove.  I figured I could make these one of a kind, something our city had not seen before.  It was a hit and our reviews were amazing.'
             },
             {
                 type:'paragraph',
-                value: 'I was a poker player'
+                value: 'After enough iterations, we had a one of a kind smash burger that blew peoples minds.',
+                src: '/burger.png'
+
             },
+
+            {
+                type:'paragraph',
+                src: '/review.png',
+                value: 'Local food critiques were raving about us and it was clear that we found product market fit.'
+            },  
+            {
+                type:'paragraph',
+                videoSrc: 'https://aqsqa2ypgvbzi7ri.public.blob.vercel-storage.com/IMG_6550-wgFVVQKmHxGu8TYviEyc9dibmeFgUK.MOV',
+                value: 'But I was not happy.  I could see the same thing happening that did with constrcution.  Creating handcuffs that would not allow me to take a real shot at tech.   I decided to build custom POS software for us, that took the sting off of flipping burgers all summer.  Neither my partner or me were really into the restaurant business, and we decided to close it down.  I was going to go on the road and see what else was out there.  I went to Los Angeles to start networking with Start ups'
+            },
+            
+            
         ]
     },
     {
-        key: 'chapter_7',
-        label: 'Chapter 7',
-        year: 2020,
+        key: 'chapter_6',
+        label: 'Chapter 6',
+        year: 2021,
         subText :'Freelance',
         src:'/chapter-1.png',
-        youtubeId: 'WaMIEwKWbyI',
-        mediaSubText: 'Launching Lead Tech at Data Council in Austin',
         blocks: [
             {
                 type:'paragraph',
-                value: 'When Covid cancelled the University football season, I was unbound to Regina.  I decided I would go on the road and see what else was out there.  I went to Los Angeles to start networking with Start ups'
+                value: 'I did Upwork gigs while attending tech events in Santa Monica until I found a full time remote job with Crowdpass.  The primary project I worked on was building a mobile app to connect their SaaS platform to their wristbands to create Access control for events.',
+                videoSrc: 'https://aqsqa2ypgvbzi7ri.public.blob.vercel-storage.com/crowdpassdemo-n0qFIdxsCwTLU2Oqu60TR9bkoiFLhS.mp4'
             },
             {
                 type:'paragraph',
-                value: 'Eventually I landed a full time gig with Crowdpass where they needed someone to take over the web app.  I was able to take over the web app and build a mobile app and a lead generation system.'
-            },
-            {
-                type:'paragraph',
-                value: 'Here is me at Data Council in Austin where we rolled out our lead collection system to the public. '
+                value: 'The second large project I did was to build lead retrieval ontop of the wristbands.  Built a peer to peer lead connection system for Data Science Council.',
+                youtubeId: 'WaMIEwKWbyI'
             },
         ]
     },
+
  
 ]
 
@@ -241,12 +272,12 @@ return <section id="section1" className=' w-full p-4'>
   Back Story
 </TypeH2>
 
+
+
 {/* 
    <BlockQuotes className=' mb-20'>
     Teach someone Incremental Static Regeneration, and they will think every website can become an authoritive DR 80.
    </BlockQuotes> */}
-
-
 
 
 
@@ -314,16 +345,24 @@ return <section id="section1" className=' w-full p-4'>
 
  <div className='flex flex-col'>
 
-                  
+              
                     {block.youtubeId?<iframe
           id="ytplayer"
        
 
           width="100%"
           height="360"
+          
           src={`https://www.youtube.com/embed/${block.youtubeId}?autoplay=0&origin=http://example.com&controls=0&rel=1`}
          
-        ></iframe>:<div>
+        ></iframe>:
+        
+        block.videoSrc?<video className='w-full'  controls>
+        <source src={block.videoSrc} type="video/mp4"/>
+        Your browser does not support the video tag.
+        </video>:
+
+        <div>
                     <div className='flex flex-col relative'>
                         <AspectRatio ratio={9 / 9} className='relative w-full h-full'>
                         <Image
