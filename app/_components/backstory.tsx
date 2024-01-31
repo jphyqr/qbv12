@@ -243,7 +243,7 @@ export default function BackStory() {
     const [api, setApi] = useState<CarouselApi>()
     const [current, setCurrent] = useState(0)
     const [count, setCount] = useState(0)
-    const [selectedTab, setSelectedTab] = useState(tabs[6])
+    const [selectedTab, setSelectedTab] = useState(tabs[tabs.length-1])
 
     useEffect(() => {
         if (!api) {
@@ -281,7 +281,7 @@ return <section id="section1" className=' w-full p-4'>
 
 
 
-<Tabs defaultValue="account" value={selectedTab.key} className="w-full">
+<Tabs defaultValue="account" value={selectedTab?.key} className="w-full">
     <div className='grid min-w-full w-full grid-cols-5  gap-10 mt-10'>
 
 <div className="col-span-5 md:col-span-4 ">
