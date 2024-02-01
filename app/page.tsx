@@ -10,6 +10,11 @@ import CrowdpassProjects from "./_components/crowdpass-projects";
 import ReactProjects from "./_components/react-projects";
 import Faqs from "@/components/layout/faqs";
 import { scrolltoHash } from "@/lib/utils";
+import { Muted } from "@/components/typography/muted";
+import { BlockQuotes } from "@/components/typography/blockquotes";
+import { Lead } from "@/components/typography/lead";
+import { Large } from "@/components/typography/large";
+import { TypeH2 } from "@/components/typography/h2";
 
 
 
@@ -40,17 +45,52 @@ export default function Home() {
      icons={icons}
  
     
-    h1='Nice to meet you'
-    p1='This site is a work in progress. Here is a video of me trying to be an SEO content creator.  Enjoy.'
+    h1='The Digital Quarterback for your V1'
+    p1='Addicted to high pressure, big problems with ridiculous deadlines.'
     p2='teest'
     primaryButton={<Button onClick={()=>scrolltoHash('projects')} variant="default">Projects</Button>}
     secondaryButton={<Button onClick={()=>scrolltoHash('backstory')} variant="outline">Back Story</Button>}
     videoUrl='https://aqsqa2ypgvbzi7ri.public.blob.vercel-storage.com/AECSEOINTRO-IeZSZduqQ2uoxOkryjvjCRwmwNV8T7.mp4'//https://aqsqa2ypgvbzi7ri.public.blob.vercel-storage.com/vsl_4-9UiWNO4erDe3m5fau5X1YlwMxD7FHL.mp4'
     thumbnailUrl='/thumbnail.png'
-
+    videoAltText='In lui of a VSL, here is some edutainment on SEO so you can read between the lines of my personality.  May update to a VSL after I get a haircut.'
    />
 
 
+<Lead>
+  <strong>I get bored,</strong> but not like that.  My zone of genious was practicing the exact same drop step over and over again.  Adding resistance bands, frictionless floors, and obstructions to the mix.  Anything to make sure that when I stepped on the football field that under any situation I would get that first step down in the right place every time.  Just writing about this jacks me up.  
+</Lead>
+
+<div className='mt-8'/>
+<Lead>
+  Years later I was coaching.  The words innovative and creative followed me around because of the gaudy results our offence put up.  But behind closed doors, I defined creativity differently. I had many speaches, most unique to version of the team I was coaching.  But my speach on creativity was always the same.
+</Lead>
+
+<BlockQuotes>
+  Anyone can be excited running new plays.  But being able to show up every day and get excited about improving 6 stretch,  even in your 4th year, is the true sign of being creative.
+</BlockQuotes>
+<div className='mt-8'/>
+
+<Lead>
+  Creativity is in the details.  It is in optimization.  It is in having a clear goal and winning.
+</Lead>
+<div className='mt-8'/>
+<Lead>
+  I get bored when the problem doesnt seem worth solving.  I get bored when the problem is too easy. I get bored when the customer is satisfied.  
+</Lead>
+
+<div className='mt-4'/>
+<Lead>
+  I am not a designer.  I am not a developer.
+</Lead>
+
+<div className='mt-4'/>
+<Large>I am a creative.</Large>
+<Large>I am a problem solver.</Large>
+
+<Large>I am a digital marketer.</Large>
+<Large>I am a product engineer.</Large>
+<div className='mt-4'/>
+<TypeH2>I am a digital quarterback.</TypeH2>
 
 
 <div id='backstory' className='mb-14'/>

@@ -35,7 +35,9 @@ type Tabs ={
     src?: string
     mediaSubText?: string
     blocks: Block[]
+    evenings?: Block[]
     youtubeId?: string
+    eveningText?: string
    
 
 }
@@ -44,10 +46,11 @@ const tabs : Tabs[] =  [
 
     {
       key: 'chapter_1',
-        label: 'Chapter 1',
+        label: 'University',
         year: 2013,
-        subText :'Football',
+        subText :'Engineering',
         src:'/chapter-1.png',
+        eveningText: 'Football',
         blocks: [
             {
                 type:'paragraph',
@@ -68,7 +71,28 @@ const tabs : Tabs[] =  [
                 videoSrc: 'https://aqsqa2ypgvbzi7ri.public.blob.vercel-storage.com/fakefg-aQRaBGghIHoQpYav3ZLcbvDJLPWAfh.mp4'
             },
 
-        ]
+        ],
+        evenings:  [
+            {
+                type:'paragraph',
+                value: 'Attended the University of Regina on a football scholarship.  Started 32 games at Right Tackle.  Team nominee for top student athlete.  Graduated with a degree in Software Systems Engineering.',
+                src: '/rams.png',
+       
+            },
+
+            {
+                type:'paragraph',
+                value: 'In 2013 I earned a spot on the Montreal Alouettes. The following season I was released and got a job at iQMetrix as a full stack web developer.',
+                src: '/als.png'
+            },
+
+            {
+                type:'paragraph',
+                value: 'Coaching.',
+                videoSrc: 'https://aqsqa2ypgvbzi7ri.public.blob.vercel-storage.com/fakefg-aQRaBGghIHoQpYav3ZLcbvDJLPWAfh.mp4'
+            },
+        ],
+
     },
     {
         key: 'chapter_2',

@@ -29,7 +29,8 @@ export default function HeroSection({
     secondaryButton,
     imageUrl,
     videoUrl,
-    thumbnailUrl
+    thumbnailUrl,
+    videoAltText
 } : 
 
 {
@@ -49,6 +50,7 @@ export default function HeroSection({
     imageUrl?: string
     videoUrl?:string
     thumbnailUrl?:string
+    videoAltText?:string
 
 }
 ) {    
@@ -67,7 +69,7 @@ export default function HeroSection({
         {
         icons?.map((icon)=> {
             return (
-                <Link key={icon.href} target="_blank" className='mb-8 text-sm text-muted-foreground flex  items-center  first:mr-2'  href={icon.href}>
+                <Link key={icon.href} target="_blank" className='mb-8 text-sm text-muted-foreground flex  items-center  mr-2'  href={icon.href}>
             
                 <Badge className='p-2' variant={'outline'}>
                   <>
@@ -128,6 +130,7 @@ export default function HeroSection({
        {imageUrl&& <Image src={imageUrl} alt={h1} layout='fill' objectFit='cover' className='rounded-lg'/>}
         {videoUrl && <video src={videoUrl}  poster={thumbnailUrl} controls={true} loop muted className='rounded-lg w-full h-full'/>}
             </AspectRatio>
+            {videoAltText&&<p className='text-muted-foreground text-sm mt-2 p-2'>{videoAltText}</p>}
         </div>
         
         
