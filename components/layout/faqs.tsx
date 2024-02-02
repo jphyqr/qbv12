@@ -14,13 +14,13 @@ type Faq = {
 }
 export default function Faqs({faqs}:FaqProps) {
 
-return (
+return ( 
 
     <section className='w-full p-4  '>
         <TypeH2>John FAQs</TypeH2>
     <Accordion type="single" collapsible className="w-full">
   {
- faqs.map((faq)=> {
+ faqs.map((faq)=> { 
         return (
             <AccordionItem value={faq.question} key={faq.question} className="w-full">
             <AccordionTrigger className="w-full">
