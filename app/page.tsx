@@ -90,7 +90,7 @@ const [openDialog, setOpenDialog] = useState(true)
              <Badge   variant={'destructive'}>Relocation Ready</Badge>
              <Badge    variant={'destructive'}>Content Ready</Badge>
              <Badge   variant={'destructive'}>In Office Ready</Badge>
-             <Badge   variant={'destructive'}>Hates staying in his apartment</Badge>
+             <Badge   variant={'destructive'}>Hates staying in his</Badge>
   </div>
 
           </DialogDescription>
@@ -99,7 +99,10 @@ const [openDialog, setOpenDialog] = useState(true)
         </DialogHeader>
 
         <DialogFooter>
-          <Button type="submit"  className='w-full mt-4' >Continue</Button>
+
+             <Button onClick={()=>setOpenDialog(false)} type="submit"  className='w-full mt-4' >Continue</Button>
+    
+       
         </DialogFooter>
       </DialogContent>
     </Dialog>
