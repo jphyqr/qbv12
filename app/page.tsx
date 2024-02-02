@@ -2,7 +2,7 @@
 import DeepDashboard from "@/components/layout/deep-dashboard/deep-dashboard";
 import HeroSection from "@/components/layout/hero-section";
 import { Button } from "@/components/ui/button";
-import { GitHubLogoIcon, LinkedInLogoIcon, TwitterLogoIcon } from "@radix-ui/react-icons";
+import { ArrowTopRightIcon, GitHubLogoIcon, LinkedInLogoIcon, TwitterLogoIcon } from "@radix-ui/react-icons";
 import { Code, Github, Hammer, Linkedin, LinkedinIcon, LucideLinkedin, Spade } from "lucide-react";
 import Image from "next/image";
 import BackStory from "./_components/backstory";
@@ -24,6 +24,7 @@ import { TypeH3 } from "@/components/typography/h3";
 import { TypeP } from "@/components/typography/p";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import Link from "next/link";
 
 
 
@@ -72,13 +73,13 @@ const [openDialog, setOpenDialog] = useState(true)
             </TypeP>
 
             <TypeP>
-            ..And if I built a successful e2e project with lots of users, I would be coaching football right now or playing poker..
+            ..And lets be honest.. if I built a successful e2e project with lots of users, Id be swinging for the fences with my own start up...
             </TypeP>
             <TypeP>
-              The larger projects I worked on are hard to show what exactly I did. As well, anything that was difficult 3 years ago is easy today.  But I can get you references.
+              I have worked on a few larger projects and I can get references, but if you are reading this you are probably a start up or ecom site and dont really care so much about my large project contributions.
             </TypeP>
             <TypeP>
-              So my vision with this site is to layer in my personality and a few unique components.  There are tones of low cost developers on upwork. <strong> Hire me if you want a high agency no-bagage Chad whose won in multiple competitive domains and spends their deep work energy optimizing products instead of spending habits. </strong> 
+              So my vision is to feature my personality and creativity.  There are tones of low cost developers on upwork, but <strong> consider me if you want a high agency no-bagage product engineer, whose won in multiple competitive domains, and onboards obsession easily. </strong> 
             </TypeP>
 
 
@@ -86,11 +87,11 @@ const [openDialog, setOpenDialog] = useState(true)
 
 <div className='flex  flex-wrap gap-1 items-center'>
 <Label>My Tech Stack</Label>
-            <Badge  variant={'destructive'}>TN Visa</Badge>
+           <Link href='www.tnvisa.com' target='blank'><Badge  variant={'destructive'}>TN Visa Ready <ArrowTopRightIcon/></Badge></Link> 
              <Badge   variant={'destructive'}>Relocation Ready</Badge>
              <Badge    variant={'destructive'}>Content Ready</Badge>
              <Badge   variant={'destructive'}>In Office Ready</Badge>
-             <Badge   variant={'destructive'}>Hates staying in his</Badge>
+             <Badge   variant={'destructive'}>Team Building Ready</Badge>
   </div>
 
           </DialogDescription>
@@ -251,12 +252,16 @@ const [openDialog, setOpenDialog] = useState(true)
 
         [
           {
+            question: 'Why QBV1?',
+            answer: 'In football we have the term QB1.  At face value it means the starting quarterback for the next game.  But the branded version of the term means: the leader.  I never played quarterback, I was an offensive linemen.  But when it comes to product building I operate like a quarterback more than an offensive linemen. A quarterback is multi faceted.  They lead communication (manager) as well as strategy (product).  They need to distribute the ball (delegate) as well as be the ball carrier sometimes (code)  They need to be able to react to stress.  This is the environment I thrive in.  More specifically, I like start ups and new products.  Poker taught me to embrace ambiguity.  So I build V1s.  I am not an expert at scaling a working product, but I am an expert and getting high end systems out the door quickly. So think of me as the starting quarterback for your V1.'
+          },
+          {
             question: 'Do You Code?',
             answer: 'Yes, I code 5-6 days a week. Coding is my creative outlet.'
           },
           {
             question: 'How much do you charge?',
-            answer: 'Depends if your project is going to take over my creative brain. If it is closed loop programming then $75/hour.  If it is open ended strategic work that will tap into my subconcious mind then I charge 5K-15K/month depending on services.'
+            answer: 'It depends if the work is something that will take over treadmill time. If I can leave the project at my desk, it will be cheaper.  If it requires deep strategic work that will take over my treadmill time, it will be more expensive.'
           },
           {
             question: 'Can you fix my computer?',
