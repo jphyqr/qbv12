@@ -61,25 +61,22 @@ const [openDialog, setOpenDialog] = useState(true)
           <DialogDescription>
             
             <Lead className='mt-2 mb-2'>
-            Profiles for frontend developers are sort of dumb.
+            Profiles for frontend developers are tricky.  
             </Lead>
 
             <TypeP>
-              The lines between code, no code, design, UI kits and boiler plates are so blurred that it is difficult to establish credit.
+              The lines between code, no code, design, UI kits and boiler plates are so blurred that it is difficult to establish skill and credit.
             </TypeP>
 
             <TypeP>
-              Look at this modal.  Five years ago I would have built the entire thing from scratch.  A few years ago, used a library,  in 2024 I copy paste a pre configed (shadcn) of a headless UI (radix) and added a few borrowed utility classes (tailwind).  Tomorrow it will be AI generated.
+              Look at this modal.  Five years ago I would have built the entire thing from scratch.  A few years ago, used a library,  in 2024 I copy paste a pre configuration (shadcn) of a headless UI (radix) and added a few borrowed utility classes (tailwind).  Tomorrow it will be AI generated.
             </TypeP>
-
-            <TypeP>
-            ..And lets be honest.. if I built a successful e2e project with lots of users, Id be swinging for the fences with my own start up...
-            </TypeP>
-            <TypeP>
-              I have worked on a few larger projects and I can get references, but if you are reading this you are probably a start up or ecom site and dont really care so much about my large project contributions.
-            </TypeP>
-            <TypeP>
-              So my vision is to feature my personality and creativity.  There are tones of low cost developers on upwork, but <strong> consider me if you want a high agency no-bagage product engineer, whose won in multiple competitive domains, and onboards obsession easily. </strong> 
+ <TypeP >
+ So my vision with this site is to feature my personality and creativity, within the context of the type of websites I build: hybrid content - app sites. If I pulled this off correctly, you should be entertained while learning about me and feeling confident that I can launch your next brand.
+  </TypeP>         
+  
+    <TypeP>
+          There are tones of low cost developers on upwork, but <strong> consider me if you want a high agency no-bagage product engineer, whose won in multiple competitive domains, and onboards obsession easily. </strong> 
             </TypeP>
 
 
@@ -92,6 +89,10 @@ const [openDialog, setOpenDialog] = useState(true)
              <Badge    variant={'destructive'}>Content Ready</Badge>
              <Badge   variant={'destructive'}>In Office Ready</Badge>
              <Badge   variant={'destructive'}>Team Building Ready</Badge>
+             <Badge   variant={'destructive'}>NextJS</Badge>
+             <Badge   variant={'destructive'}>React</Badge>
+             <Badge   variant={'destructive'}>Node</Badge>
+             <Badge   variant={'destructive'}>Tailwind</Badge>
   </div>
 
           </DialogDescription>
