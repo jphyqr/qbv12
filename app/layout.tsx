@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import NavBar from "@/components/layout/navbar";
+import { ContactFormProvider } from "./context/contact-form-context";
+import { Toaster } from "@/components/ui/toaster";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,10 +29,13 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
+                  <ContactFormProvider>
                    <NavBar/>
                    <main  className=' py-20 md:py-72  md:px-5 lg:px-16'>
         {children}
+        <Toaster />
         </main>
+        </ContactFormProvider>
         </ThemeProvider>
         </body>
     </html>

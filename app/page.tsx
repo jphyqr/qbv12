@@ -3,7 +3,7 @@ import DeepDashboard from "@/components/layout/deep-dashboard/deep-dashboard";
 import HeroSection from "@/components/layout/hero-section";
 import { Button } from "@/components/ui/button";
 import { ArrowTopRightIcon, GitHubLogoIcon, LinkedInLogoIcon, TwitterLogoIcon } from "@radix-ui/react-icons";
-import { Code, Github, Hammer, Linkedin, LinkedinIcon, LucideLinkedin, Spade } from "lucide-react";
+import { Camera, Code, Code2Icon, CodeIcon, Computer, Github, Globe, Globe2, Hammer, Lightbulb, LightbulbIcon, Linkedin, LinkedinIcon, LucideLinkedin, Spade, Video } from "lucide-react";
 import Image from "next/image";
 import BackStory from "./_components/backstory";
 import CrowdpassProjects from "./_components/crowdpass-projects";
@@ -25,12 +25,19 @@ import { TypeP } from "@/components/typography/p";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
+import SEOProjects from "./_components/seo-projects";
+import { ContactMeForm } from "@/components/contact-me-form";
+import { useContactForm } from "./context/contact-form-context";
+import { Table, TableBody, TableCaption, TableCell, TableFooter, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 
 
 export default function Home() {
 
 const [openDialog, setOpenDialog] = useState(true)
+
+const [contactMeDialog, setContactMeDialog] = useContactForm();
+
 
   const icons = [
     {
@@ -52,10 +59,41 @@ const [openDialog, setOpenDialog] = useState(true)
   
   return (
     <main className="flex min-h-screen flex-col items-center    max-w-6xl ml-auto mr-auto  pb-96">
+<Dialog
+        open={contactMeDialog  ? true : false}
+        onOpenChange={setContactMeDialog}
+      >
+        <DialogContent className="">
+          <DialogHeader>
+            <DialogTitle>Contact John</DialogTitle>
+            <DialogDescription>
+
+            </DialogDescription>
+          </DialogHeader>
+
+          <DialogFooter>
+           
+          <ContactMeForm onSuccess={()=>{
+            setContactMeDialog(false)
+          
+        }}  name={'John'} email={'jphyqr@gmail.com'} phone={'dontneed'}/>
+            {/* <Button
+              onClick={() => setContactMeDialog(false)}
+              type="submit"
+              className="w-full mt-4"
+            >
+              Continue
+            </Button> */}
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+
+
+
 
 <Dialog open={openDialog} onOpenChange={setOpenDialog}>
 
-      <DialogContent className="sm:max-w-[425px]">
+      <DialogContent className="sm:max-w-[600px]">
         <DialogHeader>
           <DialogTitle>Disclaimer</DialogTitle>
           <DialogDescription>
@@ -72,28 +110,13 @@ const [openDialog, setOpenDialog] = useState(true)
               Look at this modal.  Five years ago I would have built the entire thing from scratch.  A few years ago, used a library,  in 2024 I copy paste a pre configuration (shadcn) of a headless UI (radix) and added a few borrowed utility classes (tailwind).  Tomorrow it will be AI generated.
             </TypeP>
  <TypeP >
- So my vision with this site is to feature my personality and creativity, within the context of the type of websites I build: hybrid content - app sites. If I pulled this off correctly, you should be entertained while learning about me and feeling confident that I can launch your next brand.
+My vision with this site is to feature my personality and creativity, within the context of the type of websites I build: hybrid content - app sites. If I pulled this off correctly, you should be entertained while learning about me and feeling confident that I can launch your next brand.
   </TypeP>         
   
-    <TypeP>
-          There are tones of low cost developers on upwork, but <strong> consider me if you want a high agency no-bagage product engineer, whose won in multiple competitive domains, and onboards obsession easily. </strong> 
-            </TypeP>
 
 
-<Separator className='mt-4 mb-4' />
 
-<div className='flex  flex-wrap gap-1 items-center'>
-<Label>My Tech Stack</Label>
-           <Link href='what-is-a-tn-visa' target='blank'><Badge  variant={'destructive'}>TN Visa Ready<ArrowTopRightIcon/></Badge></Link> 
-             <Badge   variant={'destructive'}>Relocation Ready</Badge>
-             <Badge    variant={'destructive'}>Content Ready</Badge>
-             <Badge   variant={'destructive'}>In Office Ready</Badge>
-             <Badge   variant={'destructive'}>Team Building Ready</Badge>
-             <Badge   variant={'destructive'}>NextJS</Badge>
-             <Badge   variant={'destructive'}>React</Badge>
-             <Badge   variant={'destructive'}>Node</Badge>
-             <Badge   variant={'destructive'}>Tailwind</Badge>
-  </div>
+
 
           </DialogDescription>
 
@@ -117,11 +140,16 @@ const [openDialog, setOpenDialog] = useState(true)
         p2='teest'
         primaryButton={<Button onClick={() => scrolltoHash('projects')} variant="default">Projects</Button>}
         secondaryButton={<Button onClick={() => scrolltoHash('backstory')} variant="outline">Back Story</Button>}
+        tertiaryButton={<Button onClick={() => setOpenDialog(true)} variant="outline">Disclaimer</Button>}
         videoUrl='https://aqsqa2ypgvbzi7ri.public.blob.vercel-storage.com/vslupwork-lwzYiaaECJJYHKi6L6D0bhd9gdLrGN.mp4'//https://aqsqa2ypgvbzi7ri.public.blob.vercel-storage.com/vsl_4-9UiWNO4erDe3m5fau5X1YlwMxD7FHL.mp4'
-        thumbnailUrl='/thumbnail.png'
-        videoAltText='In lui of a VSL, here is some edutainment on SEO so you can read between the lines of my personality.  May update to a VSL after I get a haircut.'
+        thumbnailUrl='/thumbnail-product.png'
+        videoAltText='Example Cold VSL I sent for a product role earlier this year.  Good overview of who I am.'
       />
  
+
+ <TypeH2>
+  Fluff / Glue (Ethos of a Digital Quarterback)
+ </TypeH2>
  
       <Lead>
         <strong>I get bored,</strong> but not like that.  My zone of genious was practicing the exact same drop step over and over again.  Adding resistance bands, frictionless floors, and obstructions to the mix.  Anything to make sure that when I stepped on the football field that under any situation I would get that first step down in the right place every time.  Just writing about this jacks me up.
@@ -157,10 +185,109 @@ const [openDialog, setOpenDialog] = useState(true)
       <Large>I am a digital marketer.</Large>
       <Large>I am a product engineer.</Large>
       <div className='mt-4' />
-      <TypeH2>I am a digital quarterback.</TypeH2>
+      <TypeH3>I am a digital quarterback.</TypeH3>
 
 
-      <div id='backstory' className='mb-14' />
+
+
+      <Separator className='mt-20 mb-20' />
+
+
+      <Table>
+                <TableCaption>
+                  Lifetime Learner Who Can Work Anywhere on Anything
+                </TableCaption>
+                <TableHeader>
+<TypeH2>How I Work</TypeH2>
+                </TableHeader>
+                <TableBody>
+
+                </TableBody>
+                <TableFooter>
+                  <TableRow>
+                    <TableCell  ><CodeIcon/></TableCell>
+                    <TableCell >
+                    <Label className='mr-2  font-bold'>MVP Stack</Label> 
+                    </TableCell>
+                    <TableCell className="text-right">
+                    <Badge   >NextJS</Badge>
+             <Badge  variant={'outline'}  >React</Badge>
+             <Badge  variant={'outline'} >Node</Badge>
+             <Badge variant={'outline'}  >Tailwind</Badge>
+             <Badge  variant={'outline'} >Airtable</Badge>
+                    </TableCell>
+                  </TableRow>
+
+                  <TableRow>
+                    <TableCell colSpan={1} >  <Computer/></TableCell>
+                    <TableCell colSpan={1}>
+                    <Label className='mr-2  font-bold'>Caedence</Label> 
+                    </TableCell>
+                    <TableCell className="text-right">
+                    <Link href='what-is-a-tn-visa' target='blank'><Badge  variant={'destructive'}>TN Visa Ready<ArrowTopRightIcon/></Badge></Link> 
+                    <Badge   variant={'outline'}>Office</Badge>
+             <Badge   variant={'outline'}>Hybrid</Badge>
+             <Badge   variant={'outline'}>Remote</Badge>
+                    </TableCell>
+                  </TableRow>
+
+                  <TableRow>
+                    <TableCell colSpan={1} >  <Camera/></TableCell>
+                    <TableCell colSpan={1}>
+                    <Label className='mr-2  font-bold'>Artifacts - Ordered</Label> 
+                    </TableCell>
+                    <TableCell className="text-right">
+                    <Badge   >Full Stack Web Apps</Badge>
+             <Badge    variant={'outline'}>SEO Blogs</Badge>
+             <Badge    variant={'outline'}>Personal Blogs</Badge>
+             <Badge   variant={'outline'}>Skits/Shorts</Badge>
+             <Badge   variant={'outline'}>System/UI Designs</Badge>
+             <Link href='https://www.twitter.com/hashbuilds' target='blank'>    <Badge  variant={'outline'}>Tweets<ArrowTopRightIcon/></Badge> </Link>
+                    </TableCell>
+                  </TableRow>
+
+                  <TableRow>
+                    <TableCell colSpan={1} >  <LightbulbIcon/></TableCell>
+                    <TableCell colSpan={1}>
+                    <Label className='mr-2 font-bold'>Elite Compentencies</Label>
+                    </TableCell>
+                    <TableCell className="text-right">
+                    <Badge   variant={'outline'}>Walking Billboard</Badge>
+             <Badge    variant={'outline'}>Event & Team Building Organizer</Badge>
+             <Badge   variant={'outline'}>Product Demos</Badge>
+             <Badge   variant={'outline'}>Public Speaking</Badge>
+                    </TableCell>
+                  </TableRow>
+
+
+                  <TableRow>
+                    <TableCell colSpan={1} >  <Globe2/></TableCell>
+                    <TableCell colSpan={1}>
+                    <Label className='mr-2'>Relocation - Order</Label>
+                    </TableCell>
+                    <TableCell className="text-right">
+                    <Badge   variant={'outline'}>NYC</Badge>
+             <Badge    variant={'outline'}>LA</Badge>
+             <Badge   variant={'outline'}>ATX</Badge>
+              <Badge   variant={'outline'}>LV</Badge>
+              <Badge   variant={'outline'}>MTL</Badge>
+             <Badge   variant={'outline'}>TOR</Badge>
+             <Badge   variant={'outline'}>VAN</Badge>            
+             <Badge   variant={'outline'}>SF</Badge>
+             <Badge   variant={'outline'}>PHX</Badge>
+                    </TableCell>
+                  </TableRow>
+
+                </TableFooter>
+              </Table>
+
+
+
+
+
+
+
+      <div id='backstory' className='mb-14 mt-32' />
       <BackStory />
 
 
@@ -194,10 +321,10 @@ const [openDialog, setOpenDialog] = useState(true)
           },
           {
             key: 'SEO',
-            icon: <LucideLinkedin />,
+            icon: <Code2Icon />,
             label: 'SEO',
-            component: <div>SEO</div>,
-            todo: true
+            component: <SEOProjects/>,
+            
           },
           {
             key: 'Crowdpass',

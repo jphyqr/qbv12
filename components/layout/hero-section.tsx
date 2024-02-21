@@ -27,6 +27,7 @@ export default function HeroSection({
     p2,
     primaryButton,
     secondaryButton,
+    tertiaryButton,
     imageUrl,
     videoUrl,
     thumbnailUrl,
@@ -47,6 +48,7 @@ export default function HeroSection({
     p2: string,
     primaryButton: React.ReactNode,
     secondaryButton: React.ReactNode,
+    tertiaryButton?: React.ReactNode,
     imageUrl?: string
     videoUrl?:string
     thumbnailUrl?:string
@@ -119,8 +121,8 @@ export default function HeroSection({
      <div className='h-2 w-0 md:w-2 md:h-0 '/>
 
   {secondaryButton}
-
-  
+  <div className='h-2 w-0 md:w-2 md:h-0 '/>
+  {tertiaryButton}
         </div>
           
           </div>

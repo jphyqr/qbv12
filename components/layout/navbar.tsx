@@ -20,6 +20,7 @@ import {
 import useScroll from "@/lib/hooks/use-scroll";
 import { ModeToggle } from "../dark-toggle";
 import { Button } from "../ui/button";
+import { useContactForm } from "@/app/context/contact-form-context";
 
 
 const components: { title: string; href: string; description: string }[] = [
@@ -64,6 +65,7 @@ const components: { title: string; href: string; description: string }[] = [
 export default function NavBar() {
   const scrolled = useScroll(50);
 
+  const [contactMeDialog, setContactMeDialog] = useContactForm();
 
 
   return (
@@ -133,11 +135,9 @@ export default function NavBar() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem >
-          <Link  href="/contact-john-hashem" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Contact Me
-            </NavigationMenuLink>
-          </Link>
+
+        <Button className={navigationMenuTriggerStyle()} onClick={()=>setContactMeDialog(true)} variant="link">Contact Me</Button>
+     
         </NavigationMenuItem>
         <NavigationMenuItem >
         <NavigationMenuItem >
