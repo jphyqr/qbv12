@@ -84,7 +84,7 @@ const [openDialog, setOpenDialog] = useState(true)
 
 <div className='flex  flex-wrap gap-1 items-center'>
 <Label>My Tech Stack</Label>
-           <Link href='www.tnvisa.com' target='blank'><Badge  variant={'destructive'}>TN Visa Ready <ArrowTopRightIcon/></Badge></Link> 
+           <Link href='what-is-a-tn-visa' target='blank'><Badge  variant={'destructive'}>TN Visa Ready<ArrowTopRightIcon/></Badge></Link> 
              <Badge   variant={'destructive'}>Relocation Ready</Badge>
              <Badge    variant={'destructive'}>Content Ready</Badge>
              <Badge   variant={'destructive'}>In Office Ready</Badge>
@@ -117,7 +117,7 @@ const [openDialog, setOpenDialog] = useState(true)
         p2='teest'
         primaryButton={<Button onClick={() => scrolltoHash('projects')} variant="default">Projects</Button>}
         secondaryButton={<Button onClick={() => scrolltoHash('backstory')} variant="outline">Back Story</Button>}
-        videoUrl='https://aqsqa2ypgvbzi7ri.public.blob.vercel-storage.com/AECSEOINTRO-IeZSZduqQ2uoxOkryjvjCRwmwNV8T7.mp4'//https://aqsqa2ypgvbzi7ri.public.blob.vercel-storage.com/vsl_4-9UiWNO4erDe3m5fau5X1YlwMxD7FHL.mp4'
+        videoUrl='https://aqsqa2ypgvbzi7ri.public.blob.vercel-storage.com/vslupwork-lwzYiaaECJJYHKi6L6D0bhd9gdLrGN.mp4'//https://aqsqa2ypgvbzi7ri.public.blob.vercel-storage.com/vsl_4-9UiWNO4erDe3m5fau5X1YlwMxD7FHL.mp4'
         thumbnailUrl='/thumbnail.png'
         videoAltText='In lui of a VSL, here is some edutainment on SEO so you can read between the lines of my personality.  May update to a VSL after I get a haircut.'
       />
